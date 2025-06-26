@@ -1,4 +1,4 @@
-import { Search } from "lucide-react";
+import { CircleUserRound, Search } from "lucide-react";
 import Link from "next/link";
 import { Container } from "@/components/container";
 import { Router } from "@/configs/router.config";
@@ -54,7 +54,13 @@ export const Nav = ({ className }: Props) => {
 						</Link>
 					</div>
 
-					<Search size={26} stroke="white" className="cursor-pointer" />
+					<div className="flex gap-10">
+						<Search size={26} stroke="white" className="cursor-pointer" />
+
+						<Link href={Router.auth.login}>
+							<CircleUserRound stroke="white" className="cursor-pointer" />
+						</Link>
+					</div>
 				</div>
 			</Container>
 		</nav>
