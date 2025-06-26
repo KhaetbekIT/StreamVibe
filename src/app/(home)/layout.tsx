@@ -4,7 +4,7 @@ import { Nav } from "@/layout/nav";
 import type { LayoutType } from "@/types/type";
 
 export const metadata: Metadata = {
-	title: "Home",
+	title: "Playon | Home",
 	description: "Home page of the application",
 };
 
