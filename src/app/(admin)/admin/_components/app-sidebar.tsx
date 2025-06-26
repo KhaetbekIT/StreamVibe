@@ -10,7 +10,6 @@ import {
 	IconFileWord,
 	IconFolder,
 	IconHelp,
-	IconInnerShadowTop,
 	IconListDetails,
 	IconReport,
 	IconSearch,
@@ -18,7 +17,6 @@ import {
 	IconUsers,
 } from "@tabler/icons-react";
 import type * as React from "react";
-
 import { NavDocuments } from "@/app/(admin)/admin/_components/nav-documents";
 import { NavMain } from "@/app/(admin)/admin/_components/nav-main";
 import { NavSecondary } from "@/app/(admin)/admin/_components/nav-secondary";
@@ -32,7 +30,7 @@ import {
 	SidebarMenuButton,
 	SidebarMenuItem,
 } from "@/components/ui/sidebar";
-import Link from "next/link";
+import { Logo } from "@/layout/_components/logo";
 
 const data = {
 	user: {
@@ -161,10 +159,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
 							asChild
 							className="data-[slot=sidebar-menu-button]:!p-1.5"
 						>
-							<Link href="#">
-								<IconInnerShadowTop className="!size-5" />
-								<span className="text-base font-semibold">Acme Inc.</span>
-							</Link>
+							<Logo />
 						</SidebarMenuButton>
 					</SidebarMenuItem>
 				</SidebarMenu>
