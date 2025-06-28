@@ -9,6 +9,11 @@ export const Router = {
 		register: "/auth/register",
 		forgotPassword: "/auth/forgot-password",
 	},
+	admin: {
+		home: "/admin",
+		socials: "/admin/socials",
+		categories: "/admin/categories",
+	},
 	socials: {
 		github: "https://github.com/KhaetbekIT/PlayOn",
 	},
