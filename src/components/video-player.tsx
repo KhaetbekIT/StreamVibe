@@ -55,6 +55,6 @@ export const VideoPlayer = ({ path, className, rootClassName }: Props) => {
 
 interface Props {
 	className?: string;
-	path: string;
+	path?: string;
 	rootClassName?: string;
 }

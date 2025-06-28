@@ -1,4 +1,4 @@
-import { Plus, Trash2 } from "lucide-react";
+import { PenLine, Plus, Trash2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -12,7 +12,7 @@ import {
 } from "@/components/ui/table";
 import type { PageType } from "@/types/type";
 
-const Page: PageType = async () => {
+const Page: PageType = () => {
 	return (
 		<section className="space-y-5">
 			<div className="flex justify-between gap-2">
@@ -33,6 +33,7 @@ const Page: PageType = async () => {
 						<TableHead>№</TableHead>
 						<TableHead>Name</TableHead>
 						<TableHead>Date/Time</TableHead>
+						<TableHead>Category</TableHead>
 						<TableHead>Amount</TableHead>
 						<TableHead className="text-right">Actions</TableHead>
 					</TableRow>
@@ -42,8 +43,11 @@ const Page: PageType = async () => {
 						<TableCell className="font-medium">INV001</TableCell>
 						<TableCell>Paid</TableCell>
 						<TableCell>2022-01-01</TableCell>
+						<TableCell>Comedy</TableCell>
 						<TableCell>$250.00</TableCell>
-						<TableCell className="text-right">
+						<TableCell className="text-right space-x-2.5">
+							<PenLine className="inline-block cursor-pointer hover:text-blue-500" />
+
 							<Trash2 className="inline-block cursor-pointer hover:text-destructive" />
 						</TableCell>
 					</TableRow>

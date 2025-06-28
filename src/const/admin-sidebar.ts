@@ -1,11 +1,4 @@
-import {
-	IconCamera,
-	IconCategory,
-	IconFileAi,
-	IconFileDescription,
-	IconMovie,
-	IconNetwork,
-} from "@tabler/icons-react";
+import { IconCategory, IconMovie, IconNetwork } from "@tabler/icons-react";
 import { Router } from "@/configs/router.config";
 
 export const AdminSidebar = {
@@ -27,56 +20,8 @@ export const AdminSidebar = {
 		},
 		{
 			title: "Movies",
-			url: "#",
+			url: Router.admin.movies,
 			icon: IconMovie,
 		},
 	],
-	navClouds: [
-		{
-			title: "Capture",
-			icon: IconCamera,
-			isActive: true,
-			url: "#",
-			items: [
-				{
-					title: "Active Proposals",
-					url: "#",
-				},
-				{
-					title: "Archived",
-					url: "#",
-				},
-			],
-		},
-		{
-			title: "Proposal",
-			icon: IconFileDescription,
-			url: "#",
-			items: [
-				{
-					title: "Active Proposals",
-					url: "#",
-				},
-				{
-					title: "Archived",
-					url: "#",
-				},
-			],
-		},
-		{
-			title: "Prompts",
-			icon: IconFileAi,
-			url: "#",
-			items: [
-				{
-					title: "Active Proposals",
-					url: "#",
-				},
-				{
-					title: "Archived",
-					url: "#",
-				},
-			],
-		},
-	],
-};
+} as const;

@@ -20,7 +20,7 @@ const Page: PageType = async () => {
 				</div>
 
 				<div className="space-y-2">
-					<Label htmlFor="youtube">Youtube</Label>
+					<Label htmlFor="youtube">YouTube</Label>
 
 					<Input type="url" placeholder="@playon.official" id="youtube" />
 				</div>

@@ -13,6 +13,8 @@ export const Router = {
 		home: "/admin",
 		socials: "/admin/socials",
 		categories: "/admin/categories",
+		movies: "/admin/movies",
+		account: "/admin/account",
 	},
 	socials: {
 		github: "https://github.com/KhaetbekIT/PlayOn",

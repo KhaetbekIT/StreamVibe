@@ -7,7 +7,7 @@ import {
 	IconNotification,
 	IconUserCircle,
 } from "@tabler/icons-react";
-
+import Link from "next/link";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
 	DropdownMenu,
@@ -24,6 +24,7 @@ import {
 	SidebarMenuItem,
 	useSidebar,
 } from "@/components/ui/sidebar";
+import { Router } from "@/configs/router.config";
 
 export function NavUser({
 	user,
@@ -80,10 +81,12 @@ export function NavUser({
 						</DropdownMenuLabel>
 						<DropdownMenuSeparator />
 						<DropdownMenuGroup>
-							<DropdownMenuItem>
-								<IconUserCircle />
-								Account
-							</DropdownMenuItem>
+							<Link href={Router.admin.account}>
+								<DropdownMenuItem>
+									<IconUserCircle />
+									Account
+								</DropdownMenuItem>
+							</Link>
 							<DropdownMenuItem>
 								<IconCreditCard />
 								Billing
