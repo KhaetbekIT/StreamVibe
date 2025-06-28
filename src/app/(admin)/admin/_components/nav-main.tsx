@@ -10,15 +10,7 @@ import {
 	SidebarMenuItem,
 } from "@/components/ui/sidebar";
 
-export function NavMain({
-	items,
-}: {
-	items: {
-		title: string;
-		url: string;
-		icon?: Icon;
-	}[];
-}) {
+export function NavMain({ items }: Props) {
 	return (
 		<SidebarGroup>
 			<SidebarGroupContent className="flex flex-col gap-2">
@@ -37,4 +29,14 @@ export function NavMain({
 			</SidebarGroupContent>
 		</SidebarGroup>
 	);
+}
+
+interface Props {
+	items: Item[];
+}
+
+interface Item {
+	title: string;
+	url: string;
+	icon?: Icon;
 }
