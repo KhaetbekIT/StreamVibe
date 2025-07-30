@@ -1,13 +1,13 @@
 import type { ComponentProps } from "react";
 import { cn } from "@/libs/utils";
 
-export const Container = ({
-	children,
+export const Groups = ({
 	className,
+	children,
 	...props
 }: ComponentProps<"div">) => {
 	return (
-		<div className={cn("mx-auto container px-4", className)} {...props}>
+		<div className={cn("flex flex-col gap-3", className)} {...props}>
 			{children}
 		</div>
 	);

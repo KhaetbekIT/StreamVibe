@@ -2,35 +2,48 @@ import { Slot } from "@radix-ui/react-slot";
 import { cva, type VariantProps } from "class-variance-authority";
 import { Loader } from "lucide-react";
 import type * as React from "react";
-import { cn } from "@/lib/utils";
+import { cn } from "@/libs/utils";
 
 const buttonVariants = cva(
-	"inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive",
+	"inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive cursor-pointer",
 	{
 		variants: {
 			variant: {
 				default:
 					"bg-primary text-primary-foreground shadow-xs hover:bg-primary/90",
-				destructive:
-					"bg-destructive text-white shadow-xs hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60",
-				outline:
-					"border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50",
-				secondary:
-					"bg-secondary text-secondary-foreground shadow-xs hover:bg-secondary/80",
+				contained: "",
+				outline: "border border-solid border-gray-300",
 				ghost:
-					"hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50",
-				link: "text-primary underline-offset-4 hover:underline",
+					"border-none! border-transparent! bg-transparent! text-stone-900! shadow-none! hover:shadow-none! focus:shadow-none! p-0!",
+				icon: "bg-black-10 border border-black-12 p-2.5",
 			},
-			size: {
-				default: "h-9 px-4 py-2 has-[>svg]:px-3",
-				sm: "h-8 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5",
-				lg: "h-10 rounded-md px-6 has-[>svg]:px-4",
-				icon: "size-9",
+			color: {
+				gray: "bg-brand-muted-dark text-white hover:bg-brand-muted-dark focus-visible:ring-brand-muted-dark",
+				red: "bg-brand-light-coral text-white hover:bg-red-600 focus-visible:ring-brand-light-coral",
+				blue: "bg-brand-light-blue text-white focus-visible:ring-brand-light-blue",
+				green:
+					"bg-brand-aqua text-white hover:admin-green focus-visible:ring-brand-aqua",
+				yellow:
+					"bg-yellow-500 text-white hover:bg-yellow-600 focus-visible:ring-yellow-500",
+				pink: "bg-pink-500 text-white hover:bg-pink-600 focus-visible:ring-pink-500",
+				cyan: "bg-cyan-500 text-white hover:bg-cyan-600 focus-visible:ring-cyan-500",
+				orange:
+					"bg-orange-500 text-white hover:bg-orange-600 focus-visible:ring-orange-500",
+				black:
+					"bg-brand-gray-800 text-white hover:bg-brand-gray-800 focus-visible:ring-brand-gray-800",
+				white: "bg-white hover:bg-gray-50 focus-visible:ring-brand-muted-dark",
+				"light-blue": "bg-slate-100 text-black",
+				none: "bg-transparent",
+			},
+			shadow: {
+				true: "shadow-md",
+				false: "shadow-none!",
 			},
 		},
 		defaultVariants: {
-			variant: "default",
-			size: "default",
+			variant: "contained",
+			color: "gray",
+			shadow: false,
 		},
 	},
 );
@@ -38,7 +51,7 @@ const buttonVariants = cva(
 function Button({
 	className,
 	variant,
-	size,
+	color,
 	asChild = false,
 	loading = false,
 	...props
@@ -51,18 +64,17 @@ function Button({
 
 	return loading ? (
 		<button
+			data-slot="button"
+			className={cn(buttonVariants({ variant, color, className }))}
+			{...props}
 			type="button"
-			className={cn(buttonVariants({ variant, size, className }))}
-			disabled
 		>
 			<Loader className="animate-spin" />
 		</button>
 	) : (
 		<Comp
 			data-slot="button"
-			className={cn(buttonVariants({ variant, size, className }), {
-				"cursor-pointer": !asChild,
-			})}
+			className={cn(buttonVariants({ variant, color, className }))}
 			{...props}
 		/>
 	);

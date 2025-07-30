@@ -2,33 +2,32 @@ import type { Metadata, ResolvingMetadata } from "next";
 import type { FC, ReactNode } from "react";
 
 type SearchParams = { [key: string]: string | string[] | undefined };
-export interface ParamsWithLocale {
-	[key: string]: string;
+export interface AppParams {
+    [key: string]: string;
 }
 
-export type PageType<Params extends ParamsWithLocale = ParamsWithLocale> = FC<{
-	params: Promise<Params>;
-	searchParams: Promise<SearchParams>;
+export type PageType<Params extends AppParams = AppParams> = FC<{
+    params: Promise<Params>;
+    searchParams: Promise<SearchParams>;
 }>;
 
-export type LayoutType<Params extends ParamsWithLocale = ParamsWithLocale> =
-	FC<{
-		params: Params;
-		children: ReactNode;
-	}>;
+export type LayoutType<Params extends AppParams = AppParams> = FC<{
+    params: Params;
+    children: ReactNode;
+}>;
 
 export type ErrorRouteComponent = FC<{
-	error: Error;
-	reset: () => void;
+    error: Error;
+    reset: () => void;
 }>;
 
 export type DynamicMetadata<
-	Params extends ParamsWithLocale = ParamsWithLocale,
-	SearchParams extends object = object,
+    Params extends AppParams = AppParams,
+    SearchParams extends object = object
 > = (
-	params: {
-		params: Promise<Params>;
-		searchParams: Promise<SearchParams>;
-	},
-	parent: ResolvingMetadata,
+    params: {
+        params: Promise<Params>;
+        searchParams: Promise<SearchParams>;
+    },
+    parent: ResolvingMetadata
 ) => Promise<Metadata> | Metadata;
