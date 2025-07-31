@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/button";
 import {
 	Sheet,
 	SheetContent,
-	SheetDescription,
 	SheetFooter,
 	SheetHeader,
 	SheetTitle,
@@ -23,14 +22,13 @@ export const SearchSheet = () => {
 			>
 				<Search className="size-6" />
 			</Button>
-			<SheetContent className="space-y-5 w-2xl bg-white">
-				<SheetHeader>
-					<SheetTitle>Search results</SheetTitle>
-					<SheetDescription>Search cinema and tv shows</SheetDescription>
+			<SheetContent closeClassName="text-white" className="space-y-5 w-2xl bg-black-10 ">
+				<SheetHeader className="text-white">
+					<SheetTitle>Search cinema</SheetTitle>
 				</SheetHeader>
 
 				<SheetFooter>
-					<Button className="text-black" color="black" variant={"icon"}>
+					<Button color="white">
 						Search
 					</Button>
 				</SheetFooter>

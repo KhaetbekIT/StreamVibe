@@ -11,7 +11,7 @@ const buttonVariants = cva(
 			variant: {
 				default:
 					"bg-primary text-primary-foreground shadow-xs hover:bg-primary/90",
-				contained: "",
+				contained: "p-2.5",
 				outline: "border border-solid border-gray-300",
 				ghost:
 					"border-none! border-transparent! bg-transparent! text-stone-900! shadow-none! hover:shadow-none! focus:shadow-none! p-0!",
@@ -19,18 +19,9 @@ const buttonVariants = cva(
 			},
 			color: {
 				gray: "bg-brand-muted-dark text-white hover:bg-brand-muted-dark focus-visible:ring-brand-muted-dark",
-				red: "bg-brand-light-coral text-white hover:bg-red-600 focus-visible:ring-brand-light-coral",
-				blue: "bg-brand-light-blue text-white focus-visible:ring-brand-light-blue",
-				green:
-					"bg-brand-aqua text-white hover:admin-green focus-visible:ring-brand-aqua",
-				yellow:
-					"bg-yellow-500 text-white hover:bg-yellow-600 focus-visible:ring-yellow-500",
-				pink: "bg-pink-500 text-white hover:bg-pink-600 focus-visible:ring-pink-500",
-				cyan: "bg-cyan-500 text-white hover:bg-cyan-600 focus-visible:ring-cyan-500",
-				orange:
-					"bg-orange-500 text-white hover:bg-orange-600 focus-visible:ring-orange-500",
+				red: "bg-brand-light-coral text-white hover:bg-red-600 focus-visible:ring-brand-light-coral",				
 				black:
-					"bg-brand-gray-800 text-white hover:bg-brand-gray-800 focus-visible:ring-brand-gray-800",
+					"bg-black-10 text-white hover:bg-black-12 focus-visible:ring-brand-muted-dark",
 				white: "bg-white hover:bg-gray-50 focus-visible:ring-brand-muted-dark",
 				"light-blue": "bg-slate-100 text-black",
 				none: "bg-transparent",

@@ -8,6 +8,7 @@ import { Groups } from "@/components/groups";
 import { Routers } from "@/configs/routers.config";
 import { cn } from "@/libs/utils";
 import { SearchSheet } from "./_components/search-sheet";
+import { Nav } from "./_components/nav";
 
 export const HeaderLayout = ({
 	className,
@@ -17,11 +18,13 @@ export const HeaderLayout = ({
 		<header className={cn("py-5", className)} {...props}>
 			<Container>
 				<div className="flex items-center gap-5 justify-between">
-					<Link href={Routers.homePage}>
+					<Link href={Routers.homePage.to}>
 						<Image priority src={Logo} alt="logo" />
 					</Link>
 
-					<Groups className="flex-row shrink-0">
+					<Nav />
+
+					<Groups className="items-center flex-row">
 						<SearchSheet />
 
 						<Bell className="size-6 text-white" />
