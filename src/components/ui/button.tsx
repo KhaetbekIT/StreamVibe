@@ -15,13 +15,14 @@ const buttonVariants = cva(
 				outline: "border border-solid border-gray-300",
 				ghost:
 					"border-none! border-transparent! bg-transparent! text-stone-900! shadow-none! hover:shadow-none! focus:shadow-none! p-0!",
-				icon: "bg-black-10 border border-black-12 p-2.5",
+				icon: "bg-black-10 border border-black-15 p-2.5",
+				button: "py-3.5 px-8"
 			},
 			color: {
 				gray: "bg-brand-muted-dark text-white hover:bg-brand-muted-dark focus-visible:ring-brand-muted-dark",
-				red: "bg-red-45 text-white hover:bg-red-600 focus-visible:ring-brand-light-coral",				
+				red: "bg-red-45 text-white hover:bg-red-50 focus-visible:ring-brand-muted-dark",				
 				black:
-					"bg-black-10 text-white hover:bg-black-12 focus-visible:ring-brand-muted-dark",
+					"bg-black-10 border border-black-15 text-white hover:bg-black-20 focus-visible:ring-brand-muted-dark",
 				white: "bg-white hover:bg-gray-50 focus-visible:ring-brand-muted-dark",
 				"light-blue": "bg-slate-100 text-black",
 				none: "bg-transparent",

@@ -15,7 +15,7 @@ export const HeaderLayout = ({
 	...props
 }: Omit<ComponentProps<"header">, "children">) => {
 	return (
-		<header className={cn("py-5", className)} {...props}>
+		<header className={cn("py-5 bg-black-06/30", className)} {...props}>
 			<Container>
 				<div className="flex items-center gap-5 justify-between">
 					<Link href={Routers.homePage.to}>

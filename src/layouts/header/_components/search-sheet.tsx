@@ -28,8 +28,9 @@ export const SearchSheet = () => {
 				</SheetHeader>
 
 				<SheetFooter>
-					<Button color="white">
-						Search
+					<Button variant="button" color="red">
+						<Search className="size-6" />
+						<span>Search</span>
 					</Button>
 				</SheetFooter>
 			</SheetContent>

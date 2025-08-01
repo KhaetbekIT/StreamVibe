@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 import { Archivo, Inter, Manrope } from "next/font/google";
 import { HeaderLayout } from "@/layouts/header/header.layout";
 import { cn } from "@/libs/utils";
+import { FooterLayout } from "@/layouts/footer/footer.layout";
 
 const manrope = Manrope({
 	subsets: ["latin"],
@@ -54,6 +55,7 @@ const RootLayout: LayoutType = async ({ children }) => {
 					<main className="min-h-screen flex flex-col justify-between">
 						<HeaderLayout className="fixed top-0 z-40 shrink-0 left-0 right-0" />
 						{children}
+						<FooterLayout className="shrink-0" />
 					</main>
 				</NuqsAdapter>
 			</body>

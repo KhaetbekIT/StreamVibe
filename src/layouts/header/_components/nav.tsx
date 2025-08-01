@@ -32,7 +32,7 @@ const menu = [
 export const Nav = () => {
     const pathname = usePathname();
 
-    return <nav className="bg-black-06 p-2 rounded-xl">
+    return <nav className="bg-black-06 p-2 rounded-xl border border-black-12">
         <Groups className="flex-row gap-0">
             {
                 menu.map((item) => (

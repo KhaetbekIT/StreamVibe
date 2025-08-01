@@ -141,4 +141,118 @@ export const homeHeaderData = [
 		id: 28,
 		image: Image28,
 	},
+
+	{
+		id: 29,
+		image: Image1,
+	},
+	{
+		id: 30,
+		image: Image2,
+	},
+	{
+		id: 31,
+		image: Image3,
+	},
+	{
+		id: 32,
+		image: Image4,
+	},
+	{
+		id: 33,
+		image: Image5,
+	},
+	{
+		id: 34,
+		image: Image6,
+	},
+
+	{
+		id: 35,
+		image: Image7,
+	},
+	{
+		id: 36,
+		image: Image8,
+	},
+	{
+		id: 37,
+		image: Image9,
+	},
+	{
+		id: 38,
+		image: Image10,
+	},
+	{
+		id: 39,
+		image: Image11,
+	},
+	{
+		id: 40,
+		image: Image12,
+	},
+	{
+		id: 41,
+		image: Image13,
+	},
+	{
+		id: 42,
+		image: Image14,
+	},
+	{
+		id: 43,
+		image: Image15,
+	},
+	{
+		id: 44,
+		image: Image16,
+	},
+	{
+		id: 45,
+		image: Image17,
+	},
+	{
+		id: 46,
+		image: Image18,
+	},
+	{
+		id: 47,
+		image: Image19,
+	},
+	{
+		id: 48,
+		image: Image20,
+	},
+	{
+		id: 49,
+		image: Image21,
+	},
+	{
+		id: 50,
+		image: Image22,
+	},
+	{
+		id: 51,
+		image: Image23,
+	},
+	{
+		id: 52,
+		image: Image24,
+	},
+	{
+		id: 53,
+		image: Image25,
+	},
+	{
+		id: 54,
+		image: Image26,
+	},
+	{
+		id: 55,
+		image: Image27,
+	},
+	{
+		id: 56,
+		image: Image28,
+	},
 ];
