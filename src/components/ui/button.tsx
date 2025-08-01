@@ -19,7 +19,7 @@ const buttonVariants = cva(
 			},
 			color: {
 				gray: "bg-brand-muted-dark text-white hover:bg-brand-muted-dark focus-visible:ring-brand-muted-dark",
-				red: "bg-brand-light-coral text-white hover:bg-red-600 focus-visible:ring-brand-light-coral",				
+				red: "bg-red-45 text-white hover:bg-red-600 focus-visible:ring-brand-light-coral",				
 				black:
 					"bg-black-10 text-white hover:bg-black-12 focus-visible:ring-brand-muted-dark",
 				white: "bg-white hover:bg-gray-50 focus-visible:ring-brand-muted-dark",
