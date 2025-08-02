@@ -157,7 +157,7 @@ function CarouselItem({ className, ...props }: React.ComponentProps<"div">) {
 
 	return (
 		// biome-ignore lint/a11y/useSemanticElements: <explanation>
-<div
+		<div
 			role="group"
 			aria-roledescription="slide"
 			data-slot="carousel-item"
@@ -174,8 +174,9 @@ function CarouselItem({ className, ...props }: React.ComponentProps<"div">) {
 function CarouselPrevious({
 	className,
 	variant = "outline",
+	children,
 	...props
-}: React.ComponentProps<typeof Button>) {
+}: React.ComponentProps<typeof Button> & { children?: React.ReactNode }) {
 	const { orientation, scrollPrev, canScrollPrev } = useCarousel();
 
 	return (
@@ -193,8 +194,14 @@ function CarouselPrevious({
 			onClick={scrollPrev}
 			{...props}
 		>
-			<ArrowLeft />
-			<span className="sr-only">Previous slide</span>
+			{children ? (
+				children
+			) : (
+				<>
+					<ArrowLeft />
+					<span className="sr-only">Previous slide</span>
+				</>
+			)}
 		</Button>
 	);
 }
@@ -202,8 +209,9 @@ function CarouselPrevious({
 function CarouselNext({
 	className,
 	variant = "outline",
+	children,
 	...props
-}: React.ComponentProps<typeof Button>) {
+}: React.ComponentProps<typeof Button> & { children?: React.ReactNode }) {
 	const { orientation, scrollNext, canScrollNext } = useCarousel();
 
 	return (
@@ -221,11 +229,64 @@ function CarouselNext({
 			onClick={scrollNext}
 			{...props}
 		>
-			<ArrowRight />
-			<span className="sr-only">Next slide</span>
+			{children ? (
+				children
+			) : (
+				<>
+					<ArrowRight />
+					<span className="sr-only">Next slide</span>
+				</>
+			)}
 		</Button>
 	);
 }
+
+const CarouselDots = ({
+	className,
+	...props
+}: React.HTMLAttributes<HTMLDivElement>) => {
+	const { api, orientation } = useCarousel();
+	const [selectedIndex, setSelectedIndex] = React.useState(0);
+	const [scrollSnaps, setScrollSnaps] = React.useState<number[]>([]);
+
+	React.useEffect(() => {
+		if (!api) return;
+
+		setScrollSnaps(api.scrollSnapList());
+		const onSelect = () => setSelectedIndex(api.selectedScrollSnap());
+		api.on("select", onSelect);
+		return () => {
+			api.off("select", onSelect);
+		};
+	}, [api]);
+
+	return (
+		<div
+			className={cn(
+				"flex items-center justify-center gap-2 py-4",
+				orientation === "horizontal"
+					? "flex-row"
+					: "absolute top-0 left-[95%] w-fit! flex-col",
+				className,
+			)}
+			{...props}
+		>
+			{scrollSnaps.map((num: number, index: number) => (
+				// biome-ignore lint/a11y/noStaticElementInteractions: <explanation>
+				<span
+					onClick={() => api?.scrollTo(index)}
+					key={num}
+					className={cn(
+						"bg-black-20 h-2 w-4 inline-block cursor-pointer duration-200 transition-all ease-in-out hover:bg-black-30 rounded-full",
+						{
+							"bg-red-45 w-6": index === selectedIndex,
+						},
+					)}
+				/>
+			))}
+		</div>
+	);
+};
 
 export {
 	type CarouselApi,
@@ -234,4 +295,5 @@ export {
 	CarouselItem,
 	CarouselPrevious,
 	CarouselNext,
+	CarouselDots,
 };

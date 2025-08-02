@@ -1,11 +1,14 @@
+"use client";
+
 import { Facebook, Linkedin, Twitter } from "lucide-react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import type { ComponentProps } from "react";
 import { Container } from "@/components/container";
 import { Groups } from "@/components/groups";
 import { Button } from "@/components/ui/button";
 import { Routers } from "@/configs/routers.config";
-import { cn } from "@/libs/utils";
+import { cn, isActive } from "@/libs/utils";
 
 const widgets = [
 	{
@@ -49,6 +52,8 @@ export const FooterLayout = ({
 	className,
 	...props
 }: Omit<ComponentProps<"footer">, "children">) => {
+	const pathname = usePathname();
+
 	return (
 		<footer className={cn("bg-black-06 pt-[80px] pb-10", className)} {...props}>
 			<Container>
@@ -64,7 +69,9 @@ export const FooterLayout = ({
 										<Link
 											href={item.to}
 											scroll={false}
-											className="text-grey-60 hover:text-white"
+											className={cn("text-grey-60 hover:text-white", {
+												"text-white": isActive(item.to, pathname),
+											})}
 										>
 											{item.label}
 										</Link>
