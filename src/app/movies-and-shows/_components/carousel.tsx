@@ -89,13 +89,13 @@ export const Carousel = () => {
 						</div>
 						<Groups className="flex-row justify-between gap-5 items-center px-[50px]">
 							<CarouselPrevious
-								className="static rounded-none"
+								className="static rounded-none translate-0"
 								color="black"
 								variant="icon"
 							/>
 							<CarouselDots />
 							<CarouselNext
-								className="static rounded-none"
+								className="static rounded-none translate-0"
 								color="black"
 								variant="icon"
 							/>
