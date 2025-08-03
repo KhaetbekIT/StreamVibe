@@ -8,17 +8,17 @@ import { Container } from "@/components/container";
 import { Groups } from "@/components/groups";
 import { Button } from "@/components/ui/button";
 import {
+	Carousel,
 	type CarouselApi,
 	CarouselContent,
 	CarouselDots,
 	CarouselItem,
 	CarouselNext,
 	CarouselPrevious,
-	Carousel as CarouselWrapper,
 } from "@/components/ui/carousel";
 import { moviesBannerData } from "@/defaults/movies-banner.data";
 
-export const Carousel = () => {
+export const Banner = () => {
 	const [carouselApi, setCarouselApi] = useState<CarouselApi>();
 	const [selectedIndex, setSelectedIndex] = useState(0);
 	const pluginRef = useRef(Autoplay({ delay: 5000, stopOnInteraction: true }));
@@ -31,6 +31,8 @@ export const Carousel = () => {
 			setSelectedIndex(index);
 		};
 
+		carouselApi.on("select", onSelect);
+
 		onSelect();
 
 		return () => {
@@ -41,7 +43,7 @@ export const Carousel = () => {
 	return (
 		<section>
 			<Container>
-				<CarouselWrapper
+				<Carousel
 					orientation="horizontal"
 					plugins={[pluginRef.current]}
 					opts={{
@@ -101,7 +103,7 @@ export const Carousel = () => {
 							/>
 						</Groups>
 					</div>
-				</CarouselWrapper>
+				</Carousel>
 			</Container>
 		</section>
 	);

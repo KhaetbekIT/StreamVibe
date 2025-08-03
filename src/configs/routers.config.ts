@@ -71,4 +71,8 @@ export const Routers = {
 		to: "/cookie",
 		label: "Cookie Policy",
 	},
+	movieById: {
+		to: (id: number) => `/movie/${id}`,
+		label: "Video",
+	},
 } as const;

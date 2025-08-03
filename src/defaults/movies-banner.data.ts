@@ -1,8 +1,9 @@
 import Image1 from "@public/assets/covers/1.webp";
 import Image2 from "@public/assets/covers/2.jpg";
 import Image3 from "@public/assets/covers/3.jpg";
+import type { Banner } from "@/types/banner.type";
 
-export const moviesBannerData = [
+export const moviesBannerData: Banner[] = [
 	{
 		id: 1,
 		image: Image1,
