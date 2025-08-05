@@ -1,4 +1,5 @@
 import { type ClassValue, clsx } from "clsx";
+import dayjs from "dayjs";
 import { twMerge } from "tailwind-merge";
 
 export function cn(...inputs: ClassValue[]) {
@@ -28,3 +29,6 @@ export const formatDuration = (durationInMinutes: number): string => {
 
 	return [hoursText, minutesText].filter(Boolean).join(" ");
 };
+
+
+export const Time = dayjs;

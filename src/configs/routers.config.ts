@@ -72,7 +72,7 @@ export const Routers = {
 		label: "Cookie Policy",
 	},
 	movieById: {
-		to: (id: number) => `/movie/${id}`,
+		to: (id: number) => `/movies-and-shows/${id}`,
 		label: "Video",
 	},
 } as const;

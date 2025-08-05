@@ -61,7 +61,7 @@ function Button({
 			{...props}
 			type="button"
 		>
-			<Loader className="animate-spin" />
+			<Loader className="animate-spin size-5" />
 		</button>
 	) : (
 		<Comp
