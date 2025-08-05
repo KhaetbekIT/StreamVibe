@@ -1,4 +1,4 @@
-import { Calendar, Languages } from "lucide-react";
+import { Blocks, Calendar, Languages, Star } from "lucide-react";
 import Image from "next/image";
 import { redirect } from "next/navigation";
 import { Container } from "@/components/container";
@@ -70,9 +70,37 @@ const Page: PageType = async ({ params }) => {
 										<p>Available Languages</p>
 									</Groups>
 
-									<Groups className=" flex-row flex-wrap">
+									<Groups className="flex-row flex-wrap">
 										{
                                             videoData?.languages.map((language, index) => (
+                                                <Button color="black" key={index.toString()}>{language}</Button>
+                                            ))
+                                        }
+									</Groups>
+								</div>
+
+								<div className="space-y-3.5">
+									<Groups className="text-grey-60 flex-row items-center">
+										<Star />
+
+										<p>Ratings</p>
+									</Groups>
+
+									<p className="text-white">
+										{videoData?.ratings}
+									</p>
+								</div>
+
+								<div className="space-y-3.5">
+									<Groups className="text-grey-60 flex-row items-center">
+										<Blocks />
+
+										<p>Genres</p>
+									</Groups>
+
+									<Groups className="flex-row flex-wrap">
+										{
+                                            videoData?.genres.map((language, index) => (
                                                 <Button color="black" key={index.toString()}>{language}</Button>
                                             ))
                                         }

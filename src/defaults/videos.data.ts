@@ -36,6 +36,8 @@ export const videosData: Video[] = [
 		],
 		releaseDate: new Date(),
 		languages: ["English", "Hindi"],
+		ratings: 5,
+		genres: ["Action", "Adventure", "Fantasy"],
 	},
 	{
 		id: 2,
@@ -59,6 +61,8 @@ export const videosData: Video[] = [
 		],
 		releaseDate: new Date(),
 		languages: ["English", "Hindi"],
+		ratings: 5,
+		genres: ["Action", "Adventure", "Fantasy"],
 	},
 	{
 		id: 3,
@@ -82,6 +86,8 @@ export const videosData: Video[] = [
 		],
 		releaseDate: new Date(),
 		languages: ["English", "Hindi"],
+		ratings: 5,
+		genres: ["Action", "Adventure", "Fantasy"],
 	},
 	{
 		id: 4,
@@ -105,6 +111,8 @@ export const videosData: Video[] = [
 		],
 		releaseDate: new Date(),
 		languages: ["English", "Hindi"],
+		ratings: 5,
+		genres: ["Action", "Adventure", "Fantasy"],
 	},
 	{
 		id: 5,
@@ -128,6 +136,8 @@ export const videosData: Video[] = [
 		],
 		releaseDate: new Date(),
 		languages: ["English", "Hindi"],
+		ratings: 5,
+		genres: ["Action", "Adventure", "Fantasy"],
 	},
 	{
 		id: 6,
@@ -151,6 +161,8 @@ export const videosData: Video[] = [
 		],
 		releaseDate: new Date(),
 		languages: ["English", "Hindi"],
+		ratings: 5,
+		genres: ["Action", "Adventure", "Fantasy"],
 	},
 	{
 		id: 7,
@@ -174,6 +186,8 @@ export const videosData: Video[] = [
 		],
 		releaseDate: new Date(),
 		languages: ["English", "Hindi"],
+		ratings: 5,
+		genres: ["Action", "Adventure", "Fantasy"],
 	},
 	{
 		id: 8,
@@ -197,6 +211,8 @@ export const videosData: Video[] = [
 		],
 		releaseDate: new Date(),
 		languages: ["English", "Hindi"],
+		ratings: 5,
+		genres: ["Action", "Adventure", "Fantasy"],
 	},
 	{
 		id: 9,
@@ -220,6 +236,8 @@ export const videosData: Video[] = [
 		],
 		releaseDate: new Date(),
 		languages: ["English", "Hindi"],
+		ratings: 5,
+		genres: ["Action", "Adventure", "Fantasy"],
 	},
 	{
 		id: 10,
@@ -243,5 +261,7 @@ export const videosData: Video[] = [
 		],
 		releaseDate: new Date(),
 		languages: ["English", "Hindi"],
+		ratings: 5,
+		genres: ["Action", "Adventure", "Fantasy"],
 	},
 ];

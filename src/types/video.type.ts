@@ -11,4 +11,6 @@ export interface Video {
 	actors: (string | StaticImport)[];
 	releaseDate: Date;
 	languages: string[];
+	ratings: number;
+	genres: string[];
 }
