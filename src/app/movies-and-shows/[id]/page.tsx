@@ -3,12 +3,12 @@ import Image from "next/image";
 import { redirect } from "next/navigation";
 import { Container } from "@/components/container";
 import { Groups } from "@/components/groups";
+import { Button } from "@/components/ui/button";
 import { Routers } from "@/configs/routers.config";
 import { videosData } from "@/defaults/videos.data";
 import { Time } from "@/libs/utils";
 import type { PageType } from "@/types/type";
 import { Cast } from "./_components/cast";
-import { Button } from "@/components/ui/button";
 
 const Page: PageType = async ({ params }) => {
 	const { id } = await params;
@@ -63,7 +63,7 @@ const Page: PageType = async ({ params }) => {
 									</time>
 								</div>
 
-                                <div className="space-y-3.5">
+								<div className="space-y-3.5">
 									<Groups className="text-grey-60 flex-row items-center">
 										<Languages />
 
@@ -71,11 +71,11 @@ const Page: PageType = async ({ params }) => {
 									</Groups>
 
 									<Groups className="flex-row flex-wrap">
-										{
-                                            videoData?.languages.map((language, index) => (
-                                                <Button color="black" key={index.toString()}>{language}</Button>
-                                            ))
-                                        }
+										{videoData?.languages.map((language, index) => (
+											<Button color="black" key={index.toString()}>
+												{language}
+											</Button>
+										))}
 									</Groups>
 								</div>
 
@@ -86,9 +86,7 @@ const Page: PageType = async ({ params }) => {
 										<p>Ratings</p>
 									</Groups>
 
-									<p className="text-white">
-										{videoData?.ratings}
-									</p>
+									<p className="text-white">{videoData?.ratings}</p>
 								</div>
 
 								<div className="space-y-3.5">
@@ -99,11 +97,11 @@ const Page: PageType = async ({ params }) => {
 									</Groups>
 
 									<Groups className="flex-row flex-wrap">
-										{
-                                            videoData?.genres.map((language, index) => (
-                                                <Button color="black" key={index.toString()}>{language}</Button>
-                                            ))
-                                        }
+										{videoData?.genres.map((language, index) => (
+											<Button color="black" key={index.toString()}>
+												{language}
+											</Button>
+										))}
 									</Groups>
 								</div>
 							</div>
