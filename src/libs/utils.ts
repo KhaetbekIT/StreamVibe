@@ -6,7 +6,11 @@ export function cn(...inputs: ClassValue[]) {
 	return twMerge(clsx(inputs));
 }
 
-export const isActive = (pathname: string, href: string) => pathname === href;
+export const isActive = (pathname: string, href: string) =>
+	pathname
+		.split("/")
+		.filter(Boolean)
+		.some((path) => href.split("/").filter(Boolean).includes(path)) || pathname === href;
 
 export const toMoney = (value: number) =>
 	new Intl.NumberFormat("en-US", { style: "currency", currency: "USD" }).format(
@@ -29,6 +33,5 @@ export const formatDuration = (durationInMinutes: number): string => {
 
 	return [hoursText, minutesText].filter(Boolean).join(" ");
 };
-
 
 export const Time = dayjs;
