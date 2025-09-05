@@ -1,12 +1,13 @@
 import { Container } from "@/components/container";
 import { Groups } from "@/components/groups";
+import { LinkButton } from "@/components/link-button";
 import {
 	Accordion,
 	AccordionContent,
 	AccordionItem,
 	AccordionTrigger,
 } from "@/components/ui/accordion";
-import { Button } from "@/components/ui/button";
+import { Routers } from "@/configs/routers.config";
 
 const faqs = [
 	{
@@ -80,11 +81,21 @@ export const FAQs = () => {
 						</div>
 
 						<div>
-							<Button variant={"button"} color="red">Ask a Question</Button>
+							<LinkButton
+								href={`${Routers.supportPage.to}/#form`}
+								variant={"button"}
+								color="red"
+							>
+								Ask a Question
+							</LinkButton>
 						</div>
 					</div>
 
-					<Accordion type="single" collapsible className="grid grid-cols-2 gap-10">
+					<Accordion
+						type="single"
+						collapsible
+						className="grid grid-cols-2 gap-10"
+					>
 						<div>
 							{firstColumns.map((faq) => (
 								<AccordionItem

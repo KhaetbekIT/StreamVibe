@@ -3,9 +3,9 @@ import type { LayoutType } from "@/types/type";
 import "@/styles/globals.css";
 import type { Metadata } from "next";
 import { Archivo, Inter, Manrope } from "next/font/google";
+import { FooterLayout } from "@/layouts/footer/footer.layout";
 import { HeaderLayout } from "@/layouts/header/header.layout";
 import { cn } from "@/libs/utils";
-import { FooterLayout } from "@/layouts/footer/footer.layout";
 
 const manrope = Manrope({
 	subsets: ["latin"],
@@ -46,7 +46,7 @@ const RootLayout: LayoutType = async ({ children }) => {
 				archivo.variable,
 				inter.variable,
 				manrope.variable,
-				"min-h-screen bg-black-08",
+				"min-h-screen bg-black-08 scroll-smooth",
 			)}
 			lang="en"
 		>

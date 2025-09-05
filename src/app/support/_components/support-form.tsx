@@ -2,20 +2,22 @@
 
 import { Container } from "@/components/container";
 import { Groups } from "@/components/groups";
+import { Button } from "@/components/ui/button";
+import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import {
 	Select,
 	SelectContent,
-	SelectGroup,
 	SelectItem,
 	SelectTrigger,
 	SelectValue,
 } from "@/components/ui/select";
+import { Textarea } from "@/components/ui/textarea";
 
 export const SupportForm = () => {
 	return (
-		<section className="pt-[115px]">
+		<section id="form" className="pt-[115px]">
 			<Container>
 				<Groups className="flex-row gap-10">
 					<div className="w-[533px] space-y-5">
@@ -68,19 +70,54 @@ export const SupportForm = () => {
 								<Groups className="flex-1">
 									<Label htmlFor="phone">Phone Number</Label>
 
-									<Select>
-										<SelectTrigger className="w-full border-black-15">
-											<SelectValue placeholder="Select a fruit" />
-										</SelectTrigger>
-										<SelectContent>
-											<SelectItem value="apple">Apple</SelectItem>
-											<SelectItem value="banana">Banana</SelectItem>
-											<SelectItem value="blueberry">Blueberry</SelectItem>
-											<SelectItem value="grapes">Grapes</SelectItem>
-											<SelectItem value="pineapple">Pineapple</SelectItem>
-										</SelectContent>
-									</Select>
+									<Groups className="flex-row items-center gap-3">
+										<Select>
+											<SelectTrigger className="w-32 min-h-[70px] border-black-15">
+												<SelectValue />
+											</SelectTrigger>
+											<SelectContent>
+												<SelectItem value="apple">Apple</SelectItem>
+												<SelectItem value="banana">Banana</SelectItem>
+												<SelectItem value="blueberry">Blueberry</SelectItem>
+												<SelectItem value="grapes">Grapes</SelectItem>
+												<SelectItem value="pineapple">Pineapple</SelectItem>
+											</SelectContent>
+										</Select>
+
+										<Input
+											className="border-black-15"
+											placeholder="Enter Phone Number"
+											id="phone"
+											type="number"
+										/>
+									</Groups>
 								</Groups>
+							</Groups>
+
+							<Groups className="flex-1">
+								<Label htmlFor="message">Message</Label>
+
+								<Textarea
+									className="border-black-15"
+									id="message"
+									placeholder="Enter your Message"
+								/>
+							</Groups>
+
+							<Groups className="flex-row justify-between items-center">
+								<Checkbox
+									label={{
+										htmlFor: "agree",
+										children: <>I agree to the terms and conditions</>,
+										className: "text-grey-60",
+									}}
+									checkbox={{ id: "agree" }}
+									className="flex-row-reverse "
+								/>
+
+								<Button variant="button" color="red">
+									Send Message
+								</Button>
 							</Groups>
 						</form>
 					</div>
